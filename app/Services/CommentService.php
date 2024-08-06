@@ -2,13 +2,11 @@
 
 namespace App\Services;
 
-use App\Interfaces\PostsInterface;
-use App\Models\Post;
+use App\Interfaces\CommentInterface;
+use App\Models\Comment;
 use DateTime;
-use Illuminate\Support\Facades\DB;
 
-
-class PostsService implements PostsInterface
+class CommentService implements CommentInterface
 {
     /**
      * List function
@@ -16,13 +14,13 @@ class PostsService implements PostsInterface
      * @return array
      */
     public function list(): array    {
-        $orders = Post::where('status', 1)->get()->toArray();
+        $orders = Comment::where('is_published', 1)->get()->toArray();
         return $orders;
     }
 
     public function show(int $id): array
     {
-        $order = Post::where('id', $id)->get()->toArray();
+        $order = Comment::where('is_published', 1)->get()->toArray();
         return $order;
     }
 

@@ -2,12 +2,13 @@
  
 namespace App\Http\Controllers;
 
-use App\Services\PostsService;
+use App\Services\PostService;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\StorePostRequest;
 
-class PostsController extends Controller
+class PostController extends Controller
 {
     /**
      * @var PostsService
@@ -17,7 +18,7 @@ class PostsController extends Controller
     /**
      * @param PostsService $postsService
      */
-    public function __construct(PostsService $postsService)
+    public function __construct(PostService $postsService)
     {
         $this->postsService = $postsService;    
     }
@@ -55,6 +56,7 @@ class PostsController extends Controller
      */
     public function edit(string $id, Request $request): JsonResponse
     {
+        dd($request);
         $post =  $this->postsService->edit($id, $request);
         return response()->json($post, 200, []);
     }
@@ -65,9 +67,11 @@ class PostsController extends Controller
      * @param Request $request
      * @return JsonResponse
      */
-    public function storage(Request $request): JsonResponse
+    public function store(StorePostRequest $request): JsonResponse
     {
+        //$validate = $request->validate();
         $post = $this->postsService->storage($request);
+
         return response()->json($post, 200, []);
     }
 }
