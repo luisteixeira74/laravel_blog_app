@@ -56,7 +56,6 @@ class PostController extends Controller
      */
     public function edit(string $id, Request $request): JsonResponse
     {
-        dd($request);
         $post =  $this->postsService->edit($id, $request);
         return response()->json($post, 200, []);
     }

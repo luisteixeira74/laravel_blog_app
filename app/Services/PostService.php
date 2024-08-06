@@ -34,11 +34,18 @@ class PostService implements PostInterface
 
         $post->save();
 
-        return response()->json('Post add success');
+        return response()->json('Post add with success');
     }
 
-    public function edit(): array
+    public function edit(int $id, Request $request): array
     {
-        return [];
+        $post = Post::where('id', $id)->update([
+            'title' => $request->title,
+            'description' => $request->description,
+            'status' => $request->status
+        ]);
+
+        return response()->json('Post updated with success');
+        
     }
 }

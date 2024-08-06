@@ -28,4 +28,3 @@ Route::get('/comment/{id}', [CommentController::class, 'show'])->whereNumber('id
 Route::post('/comment', [CommentController::class, 'store']);
 Route::put('/comment', [CommentController::class, 'edit']);
 
-
