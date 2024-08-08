@@ -7,6 +7,12 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
 
+## Project to use Laravel, Docker (Laravel Sail), API, Token Auth with Sanctum
+
+Executar o Sail, Registrar um usuário, Logar esse usuário para obter o Token, consultar as APIs usando o Token
+Isso pode ser feito diretamente no Postman 
+Collection folder with examples
+
 ## About Laravel
 
 Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
