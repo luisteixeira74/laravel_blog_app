@@ -62,7 +62,7 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost/api/auth/register",
+					"raw": "http://localhost/api/auth/login",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -70,7 +70,7 @@
 					"path": [
 						"api",
 						"auth",
-						"register"
+						"login"
 					]
 				}
 			},
