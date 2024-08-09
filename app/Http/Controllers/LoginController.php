@@ -4,8 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Requests\LoginRequest;
+use Illuminate\Http\JsonResponse;
 use Illuminate\Support\Facades\Response;
 use Illuminate\Support\Facades\Auth;
+
 
 class LoginController extends Controller
 {
@@ -16,14 +18,19 @@ class LoginController extends Controller
      * @return Response
      * 
      */
-    public function login(Request $request): Response
+    public function login(Request $request): JsonResponse
     {
         //TO-DO: Criar validacao da request
 
         $credentials = $request->only('email', 'password');
 
+        
         if (!auth()->attempt($credentials))
             abort(401, 'Invalid Credentials');
+    
+        // remove tokens do usuario
+        //$request->token()->delete();
+
         
         $token = $request->user()->createToken('auth_token');
         
@@ -40,12 +47,8 @@ class LoginController extends Controller
      * @param Request $request
      * @return Response
      */
-    public function logout(Request $request): Response
+    public function logout(): Response
     {
-        Auth::logout();
-        $request->session()->invalidate();
-        $request->session()->regenerateToken();
-        
         return response()->json(['message' => 'User Logout']);
     }
 
