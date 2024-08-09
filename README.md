@@ -10,15 +10,23 @@
 ## Project to use Laravel, Docker (Laravel Sail), API, Token Auth with Sanctum
 
 Clonar o projeto
+
 Instalar o Sail: php artisan sail:install
+
 Executar o Sail: ./vendor/bin/sail up
+
 Criar o BD no Mysql: laravel ou conforme o BD informado no .env
+
 Rodar o migrate no terminal: ./vendor/bin/sail artisan migrate
+
 Rodar o seeder: ./vendor/bin/sail artisan db:seed
+
 Se necessário resetar a migration: ./vendor/bin/sail artisan migrate:reset (e rodar o migrate novamente)
 
 Criar um usuario via Postman: na pasta Collection usar o modelo do Json do endpoint Register
+
 Logar com este usuário via endpoint login para receber um novo token.
+
 Adicionar o Token no Authenticate como Bearer e colar o token para consultar as APIs Posts e Comments
 
 Collection folder with examples
