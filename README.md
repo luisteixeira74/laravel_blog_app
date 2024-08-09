@@ -11,23 +11,23 @@
 
 ## Instrução para configuração do projeto localmente
 
-- [Clonar o projeto
+- Clonar o projeto
 - cd laravel-sail
-- [Instalar o Sail: php artisan sail:install
-- [Executar o Sail: ./vendor/bin/sail up
-- [Criar o BD no Mysql com o nome: laravel ou conforme o BD informado no .env
-- [Rodar o migrate no terminal: ./vendor/bin/sail artisan migrate
-- [Rodar o seeder: ./vendor/bin/sail artisan db:seed
+- Instalar o Sail: php artisan sail:install
+- Executar o Sail: ./vendor/bin/sail up
+- Criar o BD no Mysql com o nome: laravel ou conforme o BD informado no .env
+- Rodar o migrate no terminal: ./vendor/bin/sail artisan migrate
+- Rodar o seeder: ./vendor/bin/sail artisan db:seed
 
 Se necessário resetar a migration: ./vendor/bin/sail artisan migrate:reset (e rodar o migrate novamente)
 
 ## Testando as APIs (Postman ou Insomnia)
 
 - Importar a Collection da pasta postman_collection para o Postman.
-- [Criando um usuario no sistema: na pasta Collection usar o modelo do Json do endpoint Register, alterar os dados do usuario do Body, name, email, password e enviar.
-- [Gerando um token de authenticação: Com os dados do body, copiar e colar na request Login, para obter o token necessário para consultar as APIs
-- [Adicionar o Token no Authenticate como Bearer e colar o token para consultar as APIs Posts e Comments
-- [com o Token retornado, colar em ambas requests (Get Posts e Get Comments) na aba Headers, com a key Authorization e o valor Bearer <token>
+- Criando um usuario no sistema: na pasta Collection usar o modelo do Json do endpoint Register, alterar os dados do usuario do Body, name, email, password e enviar.
+- Gerando um token de authenticação: Com os dados do body, copiar e colar na request Login, para obter o token necessário para consultar as APIs
+- Adicionar o Token no Authenticate como Bearer e colar o token para consultar as APIs Posts e Comments
+- com o Token retornado, colar em ambas requests (Get Posts e Get Comments) na aba Headers, com a key Authorization e o valor Bearer <token>
 
 ## About Laravel
 
